@@ -6,7 +6,7 @@ export class PreloadScene extends Phaser.Scene {
   }
   public init(): void {}
   public preload(): void {
-    this.load.image("logo", "assets/test.png");
+    this.load.image("logo", "content/test.png");
     this.load.on(Phaser.Loader.Events.COMPLETE, () =>
       this.scene.start("MenuScene")
     );

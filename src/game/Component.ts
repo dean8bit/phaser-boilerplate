@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "phaser";
 
 export default class Component<T extends Phaser.GameObjects.GameObject> {
@@ -7,13 +8,11 @@ export default class Component<T extends Phaser.GameObjects.GameObject> {
     T extends Component<Phaser.GameObjects.GameObject>
   >(
     gameObject: Phaser.GameObjects.GameObject,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     typeConstructor: new (...args: any[]) => T
   ): T[] {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (gameObject as any).components
-      ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ((
+      ? ((
           (gameObject as any)
             .components as Component<Phaser.GameObjects.GameObject>[]
         ).filter((c) => c instanceof typeConstructor) as T[])
@@ -28,15 +27,12 @@ export default class Component<T extends Phaser.GameObjects.GameObject> {
   }
 
   private init() {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     if (!(this.gameObject as any).components) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (this.gameObject as any).components = [];
     }
   }
 
   private add() {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (this.gameObject as any).components.push(this);
   }
 
@@ -95,7 +91,7 @@ export default class Component<T extends Phaser.GameObjects.GameObject> {
       this
     );
     this.tryCall(this.onDestroy);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     const components = (this.gameObject as any).components;
     const index = components.indexOf(this);
     if (index !== -1) {
@@ -110,7 +106,6 @@ export default class Component<T extends Phaser.GameObjects.GameObject> {
   private tryCall(f: () => void) {
     try {
       f.call(this);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       console.error(`(${this.gameObject.name}) ERROR: ${error.stack}`);
     }

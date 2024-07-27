@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import "phaser";
 
-export default class Component<T extends Phaser.GameObjects.GameObject> {
+export class Component<T extends Phaser.GameObjects.GameObject> {
   public readonly gameObject: T;
 
   public static getComponents<

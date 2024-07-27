@@ -17,6 +17,7 @@ export class GameScene extends Phaser.Scene {
       "logo"
     );
     this.add.existing(testSprite);
+    new Test(testSprite, true);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

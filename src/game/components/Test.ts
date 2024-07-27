@@ -1,4 +1,4 @@
-import Component from "../Component";
+import { Component } from "../Component";
 
 export default class Test extends Component<Phaser.GameObjects.GameObject> {
   public onStart(): void {}

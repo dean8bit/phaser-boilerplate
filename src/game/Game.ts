@@ -1,5 +1,7 @@
 import "phaser";
-import * as Scenes from "./scenes";
+import { PreloadScene } from "./scenes/PreloadScene";
+import { MenuScene } from "./scenes/MenuScene";
+import { GameScene } from "./scenes/GameScene";
 
 export interface IConfig {
   type: number;
@@ -25,7 +27,7 @@ export const config: IConfig = {
     mode: Phaser.Scale.ScaleModes.ENVELOP,
     autoCenter: Phaser.Scale.Center.CENTER_BOTH,
   },
-  scene: [Scenes.PreloadScene, Scenes.MenuScene, Scenes.GameScene],
+  scene: [PreloadScene, MenuScene, GameScene],
   parent: "game",
 };
 

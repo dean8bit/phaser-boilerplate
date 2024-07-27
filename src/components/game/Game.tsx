@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { config, createGame } from "../../game";
-import { useGameContext } from "../app";
+import { useGameContext } from "../app/App";
 
 const Game: React.FC = () => {
   const { setGame } = useGameContext();
@@ -10,7 +10,7 @@ const Game: React.FC = () => {
     return (): void => {
       game.destroy(true);
     };
-  }, []);
+  }, [setGame]);
   return <div id={config.parent} />;
 };
 

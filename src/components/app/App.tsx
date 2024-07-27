@@ -13,9 +13,11 @@ export type GameContextType = {
 
 export const GameContext = createContext<GameContextType>({
   game: undefined,
-  setGame: (game) => console.warn("no game provider"),
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  setGame: (_game) => console.warn("no game provider"),
 });
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useGameContext = () => useContext(GameContext);
 
 //document.addEventListener("contextmenu", (event) => event.preventDefault());

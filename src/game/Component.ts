@@ -57,21 +57,18 @@ export default class Component<T extends Phaser.GameObjects.GameObject> {
     );
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   public onStart(): void {}
 
   private tryOnStart(): void {
     this.tryCall(this.onStart);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   public onUpdate(): void {}
 
   private tryOnUpdate(): void {
     this.tryCall(this.onUpdate);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
   public onDestroy(): void {}
 
   private tryOnDestroy(): void {

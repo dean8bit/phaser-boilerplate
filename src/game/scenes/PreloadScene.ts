@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import "phaser";
 
 export class PreloadScene extends Phaser.Scene {
@@ -14,5 +13,5 @@ export class PreloadScene extends Phaser.Scene {
   }
   public create(): void {}
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  public update(time: number, delta: number): void {}
+  public update(_time: number, _delta: number): void {}
 }

@@ -12,8 +12,8 @@ export default class Component<T extends Phaser.GameObjects.GameObject> {
   ): T[] {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     return (gameObject as any).components
-      ? (// eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (
+      ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ((
           (gameObject as any)
             .components as Component<Phaser.GameObjects.GameObject>[]
         ).filter((c) => c instanceof typeConstructor) as T[])
